@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+    h1= title
+    each items, category in data 
+        article
+            h3= category.toUpperCase()  
+            ul
+                each item in items 
+                    li= item 

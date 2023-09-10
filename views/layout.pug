@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/static/stylesheets/style.css')
+  body
+    header 
+        nav
+            ul(class="nav-links") 
+                li 
+                    a(href="/") Home
+                li 
+                    a(href="/about") About
+                li 
+                    a(href="/api") API
+    main
+        section 
+            block content
