@@ -4,7 +4,11 @@ const router = express.Router();
 // middleware to fetch data
 router.use("/", async (req, res, next) => {
   try {
-    const response = await fetch("http://localhost:3000/api-data");
+    const api_data_url =
+      req.app.get("env") === "development"
+        ? "http://localhost:3000"
+        : "https://simple-nodejs-expressjs-web-app.vercel.app";
+    const response = await fetch(api_data_url);
     const data = await response.json();
     res.locals.apiData = data;
     next();
